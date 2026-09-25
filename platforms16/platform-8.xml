@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE platform SYSTEM "file:///usr/local/share/emane/dtd/platform.dtd">
+
+<platform name="TDMA-Node_08">
+
+    <param name="otamanagerchannelenable" value="on"/>
+    <param name="otamanagerdevice" value="eth0"/>
+    <param name="otamanagergroup" value="224.1.2.8:45702"/>
+
+    <param name="eventservicegroup" value="224.1.2.8:45703"/>
+    <param name="eventservicedevice" value="eth0"/>
+    <param name="eventservicettl" value="1"/>
+
+    <param name="controlportendpoint" value="0.0.0.0:47008"/>
+
+    <nem id="8" name="Node_08" definition="tdmanem-8.xml"/>
+
+</platform>

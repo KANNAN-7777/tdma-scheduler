@@ -1,0 +1,227 @@
+========================================
+ TDMA SCHEDULE PLANNER AND OPTIMIZER
+========================================
+
+Number of nodes: 16
+Communication range: 500.0 meters
+
+1-Hop Communication Links
+Node_01 <-> Node_02 (300.00 m)
+Node_01 <-> Node_05 (300.00 m)
+Node_01 <-> Node_06 (424.26 m)
+Node_02 <-> Node_03 (300.00 m)
+Node_02 <-> Node_05 (424.26 m)
+Node_02 <-> Node_06 (300.00 m)
+Node_02 <-> Node_07 (424.26 m)
+Node_03 <-> Node_04 (300.00 m)
+Node_03 <-> Node_06 (424.26 m)
+Node_03 <-> Node_07 (300.00 m)
+Node_03 <-> Node_08 (424.26 m)
+Node_04 <-> Node_07 (424.26 m)
+Node_04 <-> Node_08 (300.00 m)
+Node_05 <-> Node_06 (300.00 m)
+Node_05 <-> Node_09 (300.00 m)
+Node_05 <-> Node_10 (424.26 m)
+Node_06 <-> Node_07 (300.00 m)
+Node_06 <-> Node_09 (424.26 m)
+Node_06 <-> Node_10 (300.00 m)
+Node_06 <-> Node_11 (424.26 m)
+Node_07 <-> Node_08 (300.00 m)
+Node_07 <-> Node_10 (424.26 m)
+Node_07 <-> Node_11 (300.00 m)
+Node_07 <-> Node_12 (424.26 m)
+Node_08 <-> Node_11 (424.26 m)
+Node_08 <-> Node_12 (300.00 m)
+Node_09 <-> Node_10 (300.00 m)
+Node_09 <-> Node_13 (300.00 m)
+Node_09 <-> Node_14 (424.26 m)
+Node_10 <-> Node_11 (300.00 m)
+Node_10 <-> Node_13 (424.26 m)
+Node_10 <-> Node_14 (300.00 m)
+Node_10 <-> Node_15 (424.26 m)
+Node_11 <-> Node_12 (300.00 m)
+Node_11 <-> Node_14 (424.26 m)
+Node_11 <-> Node_15 (300.00 m)
+Node_11 <-> Node_16 (424.26 m)
+Node_12 <-> Node_15 (424.26 m)
+Node_12 <-> Node_16 (300.00 m)
+Node_13 <-> Node_14 (300.00 m)
+Node_14 <-> Node_15 (300.00 m)
+Node_15 <-> Node_16 (300.00 m)
+
+1-Hop / 2-Hop Conflict Links
+Node_01 <-> Node_02
+Node_01 <-> Node_03
+Node_01 <-> Node_05
+Node_01 <-> Node_06
+Node_01 <-> Node_07
+Node_01 <-> Node_09
+Node_01 <-> Node_10
+Node_01 <-> Node_11
+Node_02 <-> Node_03
+Node_02 <-> Node_04
+Node_02 <-> Node_05
+Node_02 <-> Node_06
+Node_02 <-> Node_07
+Node_02 <-> Node_08
+Node_02 <-> Node_09
+Node_02 <-> Node_10
+Node_02 <-> Node_11
+Node_02 <-> Node_12
+Node_03 <-> Node_04
+Node_03 <-> Node_05
+Node_03 <-> Node_06
+Node_03 <-> Node_07
+Node_03 <-> Node_08
+Node_03 <-> Node_09
+Node_03 <-> Node_10
+Node_03 <-> Node_11
+Node_03 <-> Node_12
+Node_04 <-> Node_06
+Node_04 <-> Node_07
+Node_04 <-> Node_08
+Node_04 <-> Node_10
+Node_04 <-> Node_11
+Node_04 <-> Node_12
+Node_05 <-> Node_06
+Node_05 <-> Node_07
+Node_05 <-> Node_09
+Node_05 <-> Node_10
+Node_05 <-> Node_11
+Node_05 <-> Node_13
+Node_05 <-> Node_14
+Node_05 <-> Node_15
+Node_06 <-> Node_07
+Node_06 <-> Node_08
+Node_06 <-> Node_09
+Node_06 <-> Node_10
+Node_06 <-> Node_11
+Node_06 <-> Node_12
+Node_06 <-> Node_13
+Node_06 <-> Node_14
+Node_06 <-> Node_15
+Node_06 <-> Node_16
+Node_07 <-> Node_08
+Node_07 <-> Node_09
+Node_07 <-> Node_10
+Node_07 <-> Node_11
+Node_07 <-> Node_12
+Node_07 <-> Node_13
+Node_07 <-> Node_14
+Node_07 <-> Node_15
+Node_07 <-> Node_16
+Node_08 <-> Node_10
+Node_08 <-> Node_11
+Node_08 <-> Node_12
+Node_08 <-> Node_14
+Node_08 <-> Node_15
+Node_08 <-> Node_16
+Node_09 <-> Node_10
+Node_09 <-> Node_11
+Node_09 <-> Node_13
+Node_09 <-> Node_14
+Node_09 <-> Node_15
+Node_10 <-> Node_11
+Node_10 <-> Node_12
+Node_10 <-> Node_13
+Node_10 <-> Node_14
+Node_10 <-> Node_15
+Node_10 <-> Node_16
+Node_11 <-> Node_12
+Node_11 <-> Node_13
+Node_11 <-> Node_14
+Node_11 <-> Node_15
+Node_11 <-> Node_16
+Node_12 <-> Node_14
+Node_12 <-> Node_15
+Node_12 <-> Node_16
+Node_13 <-> Node_14
+Node_13 <-> Node_15
+Node_14 <-> Node_15
+Node_14 <-> Node_16
+Node_15 <-> Node_16
+Strategy: largest_first             Slots: 9
+Strategy: smallest_last             Slots: 9
+Strategy: saturation_largest_first  Slots: 9
+
+Selected coloring uses 9 slots.
+
+Available Slots Test
+Node_01 can use existing slots: [9]
+
+Coloring Improvement Test
+Node_01: Slot 9
+Node_02: Slot 5
+Node_03: Slot 6
+Node_04: Slot 9
+Node_05: Slot 7
+Node_06: Slot 1
+Node_07: Slot 2
+Node_08: Slot 7
+Node_09: Slot 8
+Node_10: Slot 3
+Node_11: Slot 4
+Node_12: Slot 8
+Node_13: Slot 9
+Node_14: Slot 5
+Node_15: Slot 6
+Node_16: Slot 9
+
+Original Slots: 9
+Improved Slots: 9
+Optimized Slots: 9
+
+Node ΓåÆ Slot Mapping
+Node_01 ΓåÆ Slot 9
+Node_02 ΓåÆ Slot 5
+Node_03 ΓåÆ Slot 6
+Node_04 ΓåÆ Slot 9
+Node_05 ΓåÆ Slot 7
+Node_06 ΓåÆ Slot 1
+Node_07 ΓåÆ Slot 2
+Node_08 ΓåÆ Slot 7
+Node_09 ΓåÆ Slot 8
+Node_10 ΓåÆ Slot 3
+Node_11 ΓåÆ Slot 4
+Node_12 ΓåÆ Slot 8
+Node_13 ΓåÆ Slot 9
+Node_14 ΓåÆ Slot 5
+Node_15 ΓåÆ Slot 6
+Node_16 ΓåÆ Slot 9
+
+Slot ├ù Node Matrix
+Slot    Node_01   Node_02   Node_03   Node_04   Node_05   Node_06   Node_07   Node_08   Node_09   Node_10   Node_11   Node_12   Node_13   Node_14   Node_15   Node_16   
+1       0         0         0         0         0         1         0         0         0         0         0         0         0         0         0         0         
+2       0         0         0         0         0         0         1         0         0         0         0         0         0         0         0         0         
+3       0         0         0         0         0         0         0         0         0         1         0         0         0         0         0         0         
+4       0         0         0         0         0         0         0         0         0         0         1         0         0         0         0         0         
+5       0         1         0         0         0         0         0         0         0         0         0         0         0         1         0         0         
+6       0         0         1         0         0         0         0         0         0         0         0         0         0         0         1         0         
+7       0         0         0         0         1         0         0         1         0         0         0         0         0         0         0         0         
+8       0         0         0         0         0         0         0         0         1         0         0         1         0         0         0         0         
+9       1         0         0         1         0         0         0         0         0         0         0         0         1         0         0         1         
+
+Spatial Reuse
+Slot 5: Node_02, Node_14
+Slot 6: Node_03, Node_15
+Slot 7: Node_05, Node_08
+Slot 8: Node_09, Node_12
+Slot 9: Node_01, Node_04, Node_13, Node_16
+
+Slots reused by multiple nodes: 5
+
+Schedule Verification
+PASS: No 1-hop or 2-hop conflicts detected.
+
+========== SCHEDULE SUMMARY ==========
+Nodes                  : 16
+Communication Range    : 500.0 m
+1-Hop Communication   : 42
+1-Hop / 2-Hop Conflicts: 90
+Total TDMA Slots      : 9
+Reused Slots           : 5
+Maximum Nodes / Slot   : 4
+Verification            : PASS
+=======================================
+
+Total TDMA Slots: 9

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE transport SYSTEM "file:///usr/local/share/emane/dtd/transport.dtd">
+<transport name="Virtual Transport 16" library="transvirtual">
+    <param name="bitrate" value="0"/>
+    <param name="devicepath" value="/dev/net/tun"/>
+    <param name="device" value="emane16"/>
+    <param name="address" value="10.100.0.16"/>
+    <param name="mask" value="255.255.255.0"/>
+</transport>

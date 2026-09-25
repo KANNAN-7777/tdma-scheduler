@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE platform SYSTEM "file:///usr/local/share/emane/dtd/platform.dtd">
+
+<platform name="TDMA-16-NEM">
+
+    <param name="otamanagerchannelenable" value="on"/>
+    <param name="otamanagerdevice" value="eth0"/>
+    <param name="otamanagergroup" value="224.1.2.8:45702"/>
+
+    <param name="eventservicegroup" value="224.1.2.8:45703"/>
+    <param name="eventservicedevice" value="eth0"/>
+    <param name="eventservicettl" value="1"/>
+
+    <param name="controlportendpoint" value="0.0.0.0:47000"/>
+
+    <nem id="1" name="Node_01" definition="tdmanem-1.xml"/>
+    <nem id="2" name="Node_02" definition="tdmanem-2.xml"/>
+    <nem id="3" name="Node_03" definition="tdmanem-3.xml"/>
+    <nem id="4" name="Node_04" definition="tdmanem-4.xml"/>
+    <nem id="5" name="Node_05" definition="tdmanem-5.xml"/>
+    <nem id="6" name="Node_06" definition="tdmanem-6.xml"/>
+    <nem id="7" name="Node_07" definition="tdmanem-7.xml"/>
+    <nem id="8" name="Node_08" definition="tdmanem-8.xml"/>
+    <nem id="9" name="Node_09" definition="tdmanem-9.xml"/>
+    <nem id="10" name="Node_10" definition="tdmanem-10.xml"/>
+    <nem id="11" name="Node_11" definition="tdmanem-11.xml"/>
+    <nem id="12" name="Node_12" definition="tdmanem-12.xml"/>
+    <nem id="13" name="Node_13" definition="tdmanem-13.xml"/>
+    <nem id="14" name="Node_14" definition="tdmanem-14.xml"/>
+    <nem id="15" name="Node_15" definition="tdmanem-15.xml"/>
+    <nem id="16" name="Node_16" definition="tdmanem-16.xml"/>
+
+</platform>

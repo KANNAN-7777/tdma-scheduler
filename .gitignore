@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+logs16/
+*.log
+.venv/
+venv/
+.env
+.vscode/
+emane/
+TDMA_Part2_EMANE/
