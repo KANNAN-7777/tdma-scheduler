@@ -1,37 +1,56 @@
 # TDMA Schedule Planner and EMANE Integration
 
-Centralized TDMA scheduler for a 16-node wireless network with EMANE integration.
+A centralized TDMA scheduling system for a 16-node wireless network with native EMANE TDMA integration.
 
 ## Overview
 
 This project implements a centralized TDMA Schedule Planner and Optimizer using graph-based interference modelling and graph-coloring heuristics.
 
-The project has two parts:
+The project is divided into two parts:
 
-- Part 1: TDMA Schedule Planner and Optimizer
-- Part 2: EMANE TDMA Integration and Schedule Enforcement
+- **Part 1:** TDMA Schedule Planner and Optimizer
+- **Part 2:** EMANE TDMA Integration and Schedule Enforcement
 
-Part 1 converts node coordinates into a communication graph, builds a distance-2 conflict graph, assigns TDMA slots using multiple coloring heuristics, performs slot optimization, enables spatial reuse, generates a Slot × Node matrix, and verifies the final schedule.
+Part 1 converts static node coordinates into a communication graph, builds a distance-2 conflict graph, assigns TDMA slots using multiple coloring heuristics, performs slot optimization, enables spatial reuse, generates a Slot × Node binary matrix, and verifies the final schedule.
 
-Part 2 converts the Part 1 schedule into a native EMANE TDMA schedule, runs it on a 16-NEM EMANE platform, and validates packet behavior under allowed and blocked transmission opportunities.
+Part 2 converts the Part 1 Node-to-Slot mapping into a native EMANE TDMA schedule, publishes it to a 16-NEM EMANE runtime, validates schedule acceptance, and performs a packet-level allowed/blocked schedule enforcement test.
 
 ---
 
-## Part 1 – TDMA Schedule Planner and Optimizer
-
-### Problem
-
-In a TDMA wireless network, nodes transmit in assigned time slots.
-
-Two nodes that can interfere with each other must not transmit in the same slot. To model both direct and two-hop interference, the communication graph is converted into a distance-2 conflict graph.
-
-The scheduler then applies graph-coloring heuristics to assign TDMA slots while allowing spatial reuse between non-conflicting nodes.
-
-### Input
-
-The scheduler uses static coordinates for 16 wireless nodes.
-
-The communication range is:
+## Project Architecture
 
 ```text
-500 meters
+                    PART 1
+┌──────────────────────────────────────────────┐
+│ Node Coordinates                             │
+│              ↓                               │
+│ Communication Graph                          │
+│              ↓                               │
+│ Distance-2 Conflict Graph                    │
+│              ↓                               │
+│ Graph Coloring Heuristics                    │
+│              ↓                               │
+│ Slot Optimization                            │
+│              ↓                               │
+│ Node-to-Slot Mapping                         │
+│              ↓                               │
+│ Slot × Node Matrix                           │
+│              ↓                               │
+│ Conflict Verification                        │
+└──────────────────────────────────────────────┘
+                       │
+                       ▼
+                    PART 2
+┌──────────────────────────────────────────────┐
+│ schedule.json                                │
+│              ↓                               │
+│ generate_emane_schedule.py                   │
+│              ↓                               │
+│ emane_tdma_schedule.xml                      │
+│              ↓                               │
+│ emaneevent-tdmaschedule                      │
+│              ↓                               │
+│ 16-NEM EMANE Runtime                         │
+│              ↓                               │
+│ Schedule Enforcement Test                    │
+└──────────────────────────────────────────────┘
