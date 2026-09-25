@@ -1,0 +1,64 @@
+VAAN MEGAM PART 2 - TDMA SCHEDULE ENFORCEMENT
+===============================================
+The test uses the Part-1 Node_01 -> slot 9 mapping (EMANE slot index 8).
+ALLOWED: NEM1 slot 8 = TX; NEM2 is able to receive.
+BLOCKED: NEM1 slot 8 = RX; NEM1 has no TX opportunity.
+50 raw Ethernet frames are generated in each clean EMANE run.
+10 dB pathloss is applied between NEM1 and NEM2.
+
+[ALLOWED]
+Schedule: emane_tdma_schedule_allowed.xml
+Before test:
+nem 2   mac  numRxSlotErrorMissed = 0
+nem 2   mac  numRxSlotValid = 0
+nem 2   mac  numTxSlotValid = 140
+nem 2   mac  processedDownstreamPackets = 0
+nem 2   mac  processedUpstreamPackets = 0
+nem 2   mac  scheduler.scheduleAcceptFull = 1
+nem 2   mac  scheduler.scheduleRejectFrameIndexRange = 0
+nem 2   mac  scheduler.scheduleRejectOther = 0
+nem 2   mac  scheduler.scheduleRejectSlotIndexRange = 0
+nem 2   mac  scheduler.scheduleRejectUpdateBeforeFull = 0
+After 50 generated frames:
+nem 2   mac  numRxSlotErrorMissed = 12
+nem 2   mac  numRxSlotValid = 5
+nem 2   mac  numTxSlotValid = 296
+nem 2   mac  processedDownstreamPackets = 0
+nem 2   mac  processedUpstreamPackets = 17
+nem 2   mac  scheduler.scheduleAcceptFull = 1
+nem 2   mac  scheduler.scheduleRejectFrameIndexRange = 0
+nem 2   mac  scheduler.scheduleRejectOther = 0
+nem 2   mac  scheduler.scheduleRejectSlotIndexRange = 0
+nem 2   mac  scheduler.scheduleRejectUpdateBeforeFull = 0
+NEM2 processedUpstreamPackets: 17
+
+[BLOCKED]
+Schedule: emane_tdma_schedule_blocked.xml
+Before test:
+nem 2   mac  numRxSlotErrorMissed = 0
+nem 2   mac  numRxSlotValid = 0
+nem 2   mac  numTxSlotValid = 128
+nem 2   mac  processedDownstreamPackets = 3
+nem 2   mac  processedUpstreamPackets = 0
+nem 2   mac  scheduler.scheduleAcceptFull = 1
+nem 2   mac  scheduler.scheduleRejectFrameIndexRange = 0
+nem 2   mac  scheduler.scheduleRejectOther = 0
+nem 2   mac  scheduler.scheduleRejectSlotIndexRange = 0
+nem 2   mac  scheduler.scheduleRejectUpdateBeforeFull = 0
+After 50 generated frames:
+nem 2   mac  numRxSlotErrorMissed = 0
+nem 2   mac  numRxSlotValid = 0
+nem 2   mac  numTxSlotValid = 279
+nem 2   mac  processedDownstreamPackets = 3
+nem 2   mac  processedUpstreamPackets = 0
+nem 2   mac  scheduler.scheduleAcceptFull = 1
+nem 2   mac  scheduler.scheduleRejectFrameIndexRange = 0
+nem 2   mac  scheduler.scheduleRejectOther = 0
+nem 2   mac  scheduler.scheduleRejectSlotIndexRange = 0
+nem 2   mac  scheduler.scheduleRejectUpdateBeforeFull = 0
+NEM2 processedUpstreamPackets: 0
+
+RESULTS
+Allowed traffic received: PASS
+Blocked traffic not received: PASS
+Overall schedule enforcement: PASS
